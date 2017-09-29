@@ -1,0 +1,16 @@
+- unless @fiddle == nil or @fiddle.new_record?
+  = form_for Upload.new do |f|
+    %div{:style => "display:none"}
+      %input{:hidden => "", :name => "fiddle_id", :type => "", :value => "#{@param_id}"}/
+    %h4 Upload archive(zip only, 10Kb max)
+    .input-group.my-input-file-group
+      %label.input-group-btn
+        %span.btn.btn-file
+          Browse&hellip;
+          = f.file_field :file, multiple: false, style:"display: none;"
+      %input.form-control.upload-text{type: 'text', readonly: true}
+    -#= f.file_field :file, multiple: false
+  .progress-bar-success.progress-bar.marg_top_15
+  %br
+  %table#upload_list.table-striped{style: 'width: 100%;'}
+  %button#clear_files.btn.btn-file.mdl-js-ripple-effect.mdl-js-button Delete all files

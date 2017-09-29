@@ -1,0 +1,78 @@
+
+- content_for(:title) do
+  FAQ - Docker Fiddle
+
+.row
+  .col-md-12
+    .container.marg_top_big.marg_bott_big
+      %ul.list-unstyled
+        %li
+          %a{href:'#fiddle'}
+            Fiddle
+        %li
+          %a{href:'#upload'}
+            Upload
+        %li
+          %a{href:'#bug'}
+            Bugs
+
+      %h2#fiddle Fiddle
+      %ul.list-group
+        %li.list-group-item
+          %button{'data-toggle'=>'collapse', 'data-target'=>'#fiddle-1', class:'btn-link'} How do I build the Dockerfile?
+          #fiddle-1.collapse
+            First you need to save the fiddle by pressing the 'Save' button on the left, then press the 'Build'
+            button that should appear after you save the fiddle. It will flash blue and then on the right you will
+            see if the fiddle was successfully built or not.
+            %br
+             If the Docker image was not built successfully you will
+            see an error message describing what caused the failure.  
+            %br
+            If the build was successful,
+            you will get a command to pull that image.
+        %li.list-group-item
+          %button{'data-toggle'=>'collapse', 'data-target'=>'#fiddle-2', class:'btn-link'} What do buttons on the left mean?
+          #fiddle-2.collapse
+            If you have not saved the fiddle yet, you are going to see three buttons: 'Save', 'Check' and 'Clear-Check'
+            %ul.list-unstyled
+              %li 'Save' - save the fiddle, so you can build your container and give a link to someone else
+              %li
+                'Check' - run the fiddle through the
+                = link_to 'open-source Dockerfile Linter', 'https://github.com/lukasmartinelli/hadolint'
+              %li 'Clear-check' - remove the Check warnings
+            If the fiddle was previously saved you are going to see a few new buttons: 'Build', 'Update' and 'Fork'
+            %ul.list-unstyled
+              %li
+                'Build' - build the fiddle and push the image to the official docker repository (this
+                will automatically save the changes you made before pressing the build button)
+              %li 'Update' - create another version of the same fiddle
+              %li 'Fork' - create another fiddle from the code and files of the previous one
+
+      %h2#upload Upload
+      %ul.list-group
+        %li.list-group-item
+          %button{'data-toggle'=>'collapse', 'data-target'=>'#upload-1', class:'btn-link'} How do I upload the file?
+          #upload-1.collapse
+            First you need to save the fiddle by pressing 'Save' button on the left, then press the 'Browse...'
+            button that should appear on the right side of the screen (or below if your're on a mobile device)
+        %li.list-group-item
+          %button{'data-toggle'=>'collapse', 'data-target'=>'#upload-2', class:'btn-link'} How does it work?
+          #upload-2.collapse
+            You upload the archive contents of which are going to be extracted and the list of the contents will be shown on your right.
+            The files that will be displayed are going to be the build "context"
+        %li.list-group-item
+          %button{'data-toggle'=>'collapse', 'data-target'=>'#upload-3', class:'btn-link'} Why did some of my files get deleted?
+          #upload-3.collapse
+            There are might be two reasons for that:
+            %ul
+              %li
+                You or someone who had a link to the fiddle deleted them using the button 'Delete all files'
+              %li
+                You or someone who had a link to the fiddle uploaded another archive, with means that the previous files get
+                automatically deleted
+      %h2#bug Bugs
+      %ul.list-group
+        %li.list-group-item
+          %button{'data-toggle'=>'collapse', 'data-target'=>'#bug-1', class:'btn-link'} What do I do if I have found a bug?
+          #bug-1.collapse
+            If you have found a bug, please report it to ilya@galacticexchange.io

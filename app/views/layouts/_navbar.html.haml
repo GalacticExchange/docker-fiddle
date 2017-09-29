@@ -1,0 +1,16 @@
+.head.flex
+  .logo.inl-flex
+    = link_to 'http://galacticexchange.io', :class=>"undec" do
+      .hidden-xs.hidden-md{:style=>" width: 190pt"}
+        = image_tag 'logos/logo.png', class:"full-logo", :style=>"margin: 20px 0px 0px 20px; width: 150pt"
+      .visible-xs.visible-md{:style=>"width: 80pt"}
+        = image_tag 'logos/logo_short.png',  class:"short-logo", :style=>"margin: 20pt 0px 0px 15px; width: 60pt"
+  .inl-flex.flex-grow
+    %h2{:style => "margin-top: 25px !important;"} Docker Fiddle
+  -#  %section#searchbox{:style=>"padding-top: 19px;  display: inline-flex; flex-grow: 1"}
+  -#    = form_tag( 'asd', :method => "get", :id => "search", :class => "header_search", :style=>"width: 100%; margin-bottom: 0px; height: 40px;") do
+  -#      = text_field_tag :name, params[:name], placeholder: "Search containers", :class => "form-control"
+  .inl-flex.padd_left_md.padd_ri_md
+    = link_to root_path, :style => "margin-top: 25px;" do
+      %button.mdl-button.mdl-js-button.mdl-js-ripple-effect.gex-btn-new
+        Create new Fiddle

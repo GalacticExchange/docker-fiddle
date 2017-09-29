@@ -1,0 +1,12 @@
+/*
+ *= require_self
+ *= require codemirror
+ *= require codemirror/themes/vibrant-ink
+ *= require codemirror/themes/cobalt
+ *= require svg
+ *= require bootstrap3
+ *= require overrides
+ *= require tpl_new
+ *= require_tree ./partials
+*/
+

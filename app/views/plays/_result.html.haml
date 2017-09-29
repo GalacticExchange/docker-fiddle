@@ -1,0 +1,28 @@
+- if @execution_exception.present?
+  .riddle-panel
+    Something went really wrong. We'll look into this problem
+- if @fiddle_result.present?
+  %h4 Result:
+  - case @fiddle_result.success
+  - when 1
+    %span
+      Your container was successfully built!
+    %br
+    %span
+      You can pull it by running this code in your console
+      %code
+        = @fiddle_result.pull
+    %br
+    %span Feel free to share your results!
+    %br
+  - else
+    %span We couldn't build your container, something went wrong
+    %br
+    %br
+  - if @fiddle_result.exception.present?
+    %span An Exception occurred while building your container.
+    %br
+    %br
+    - @fiddle_result.exception.inspect.split("\n").each do |exc|
+      = exc
+      %br

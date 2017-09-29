@@ -1,0 +1,11 @@
+- if @fiddle.errors.any?
+  var error_message = "#{escape_javascript(@fiddle.errors.full_messages.join(', '))}";
+  $(".field-error").remove();
+  $('
+  #field-error.alert-box.alert{"data-alert" => ""}>
+    ' + error_message + '
+    %a.close{:href => ""} ×
+  ').insertBefore("#fiddle_form ");
+  $(document).foundation('alert','events')
+- else
+  window.location.replace("#{url_for(versioned_fiddle_path(@fiddle.code_type, @fiddle, @fiddle.versions.count))}");

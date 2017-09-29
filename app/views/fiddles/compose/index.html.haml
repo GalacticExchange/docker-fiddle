@@ -1,0 +1,17 @@
+.row
+  .col-md-8.flex-row
+    .flex-nav-bar
+      = render partial: 'fiddles/compose/navbar'
+    .flex-code-form
+      = render partial: 'fiddles/form'
+  .col-md-4
+    #fiddle_result
+      %div
+        %h4 Welcome to Docker Fiddle
+        %p This web-application allows you to write, validate and build Dockerfiles and Docker-compose online.
+        %h4
+          Docker-Compose reference can be found
+          = link_to 'here', 'https://docs.docker.com/compose/compose-file/'
+
+
+= render partial: 'fiddles/js'

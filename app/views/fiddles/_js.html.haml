@@ -1,0 +1,13 @@
+:javascript
+  stuff = []
+  stuff.push($('#run_fiddle'))
+  stuff.push($('#save_fiddle'))
+  stuff.push($('#update_fiddle'))
+  stuff.push($('#lint'))
+  var length = $('#fiddle_code').val().length;
+  if (length == 0){
+    $.each(stuff, function(_, item){
+      if (item.length)
+        item.addClass('not-active')
+      })
+  }

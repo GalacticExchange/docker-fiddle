@@ -1,0 +1,24 @@
+.hor_border
+%h2.text-center.marg_bott_md.marg_top_big
+  What do you want to create?
+.flex.flex-center.marg_bott_big
+  %form#compose_form{action: '', method: 'POST'}
+    %input{type:'hidden', value: 'compose', name: 'code_type'}
+    %input.hidden{type:'submit'}
+    %a#compose_btn.create_button
+      = image_tag 'Compose.png'
+      %h4.text-capitalize Docker-compose file
+  %form#dockerfile_form{action: '', method: 'POST'}
+    %input{type:'hidden', value: 'dockerfile', name: 'code_type'}
+    %input.hidden{type:'submit'}
+    %a#dockerfile_btn.create_button
+      = image_tag 'docker.png'
+      %h4.text-capitalize Dockerfile
+
+:javascript
+  $('#compose_btn').click(function(){
+    $('#compose_form').submit();
+    })
+  $('#dockerfile_btn').click(function(){
+    $('#dockerfile_form').submit();
+    })

@@ -1,0 +1,43 @@
+.tool {
+  display: block;
+  margin: 0 auto;
+  fill: #2f2f2f;
+  width: 3em;
+  height: 3em;
+}
+
+.icon-bar a:hover .tool{
+  fill: #1d87e4;
+}
+
+.icon-bar > *:hover {
+  background: #f7f7f7;
+}
+
+#fiddle_form {
+  a{
+    &:hover {
+      background-color: inherit;
+    }
+  }
+}
+
+
+.pulse-animate svg{
+    -webkit-animation:pulse 2s infinite;
+    -moz-animation:pulse 2s infinite;
+    animation:pulse 2s infinite;
+}
+
+
+@keyframes pulse {
+  0% {
+    fill: #1d87e4;
+  }
+  50% {
+    fill: #2f2f2f;
+  }
+  100% {
+    fill: #1d87e4;
+  }
+}

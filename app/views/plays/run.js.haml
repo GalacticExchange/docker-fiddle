@@ -1,0 +1,5 @@
+:plain
+  $("#load_icon").hide();
+  $("#build_output").html("#{escape_javascript(render partial: 'result')}");
+  $("#run_fiddle .c").removeClass("pulse-animate");
+  $(window).scrollTop($("#build_output").offset().top);

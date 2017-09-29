@@ -1,0 +1,4 @@
+- if @fiddle.errors.any?
+  $("#fiddle_form").html("#{escape_javascript(render partial: "form")}");
+- else
+  window.location.replace("#{url_for(versioned_fiddle_path(@fiddle.code_type ,@fiddle, @fiddle.versions.count))}");

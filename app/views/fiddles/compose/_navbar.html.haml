@@ -1,0 +1,22 @@
+.icon-bar
+  - if @fiddle.new_record?
+    = link_to "#", id: "save_fiddle",  title: "Save fiddle" do
+      = embedded_svg 'ic_backup_black_24px.svg', class: "tool"
+      %label Save
+  - else
+    = link_to "#", :id=>"update_fiddle", "data-update-url" => url_for(@fiddle), title: "Save a new version", :class=> "item" do
+      = embedded_svg 'ic_backup_black_24px.svg', class: "tool"
+      %label Update
+    = link_to "#", :id=>"fork_fiddle", "data-fork-url" => url_for([:fork, @fiddle]), title: "Fork your own version", :class=> "item" do
+      = embedded_svg 'ic_call_split_black_24px.svg', class: "tool"
+      %label Fork
+  = link_to "#", id: "lint", title: 'Check fiddle by linter' do
+    .c
+      = embedded_svg 'ic_spellcheck_black_24px.svg', class: "tool"
+      %label Check
+  = link_to "#", id: "clear", title: 'Clear the checks', class: 'not-active' do
+    .c
+      = embedded_svg 'ic_clear_black_24px.svg', class: "tool"
+      %label{style: 'white-space: normal'}
+        Clear-
+        check

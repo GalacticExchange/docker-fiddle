@@ -1,0 +1,31 @@
+.row
+  .col-md-8.flex-row
+    .flex-nav-bar
+      = render partial: 'fiddles/dockerfile/navbar'
+    .flex-code-form
+      = render partial: 'fiddles/form'
+  .col-md-4
+    #fiddle_result
+      %div
+        %h4 Welcome to Docker Fiddle
+        %p This web-application allows you to write, validate and build Dockerfiles and Docker-compose online.
+        %h4
+          Dockerfile reference can be found
+          = link_to 'here', 'https://docs.docker.com/engine/reference/builder/'
+      - if !@fiddle.new_record?
+        #build_output
+          %h4 Result information will be shown here
+          - if @fiddle.build_status.eql? 1
+            This fiddle was previously successfully built.
+            %br
+            You can import it by running this command in your console
+            %br
+            %code
+              = fiddle_pull_string(params)
+        #load_icon{style: 'display: none;'}
+          = embedded_svg 'squares.svg'
+        = render partial: 'uploads/form'
+
+      - else
+        %h4 In order to build the fiddle or to upload files, you need to save it first
+= render partial: 'fiddles/js'
